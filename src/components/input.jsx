@@ -1,11 +1,11 @@
 
-export function ProfileInput({fullName, setFullName, email, setEmail, tel, setTel, location, setLocation}){
+export function ProfileInput({userInfo, setUserInfo}){
     return (
         <>
-        <div className="input"><label >Full Name</label><input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}></input></div>
-        <div className="input"><label >Email</label><input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
-        <div className="input"><label >Phone Number</label><input type="number" value={tel} onChange={(e) => setTel(e.target.value)}></input></div>
-        <div className="input"><label >Address</label><input type="text" value={location} onChange={(e) => setLocation(e.target.value)}></input></div>
+        <div className="input"><label >Full Name</label><input type="text" value={userInfo.name} onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}></input></div>
+        <div className="input"><label >Email</label><input type="email" value={userInfo.email} onChange={(e) => setUserInfo({...userInfo, email: e.target.value})}></input></div>
+        <div className="input"><label >Phone Number</label><input type="number" value={userInfo.tel} onChange={(e) => setUserInfo({...userInfo, tel: e.target.value})}></input></div>
+        <div className="input"><label >Address</label><input type="text" value={userInfo.location} onChange={(e) => setUserInfo({...userInfo, location: e.target.value})}   ></input></div>
         </>
     );
 }

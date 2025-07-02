@@ -1,21 +1,22 @@
 import { useState } from 'react';
 import './App.css'
 import CV from './components/cv'
-import { ProfileInput } from './components/input';
+import { EducationInput, ProfileInput, WorkInput } from './components/input';
 
 function App() {
 
-  const [fullName, setFullName] = useState("John Doe");
-  const [email, setEmail] = useState("mail@example.com");
-  const [tel, setTel] = useState("923103333333");
-  const [location, setLocation] = useState("Islamabad, PK");
+  const [userInfo, setUserInfo] = useState({name:"John Doe", email:"mail@example.com", tel:"923101234567", location:"Islamabad. PK"});
+
+  const [userWork, setUserWork] = useState([{name:"hello", title:"world"}]);
 
   return (
       <>
       <div className="menu">
-        <ProfileInput fullName = {fullName} setFullName = {setFullName} email = {email} setEmail = {setEmail} tel = {tel} setTel = {setTel} location = {location} setLocation = {setLocation}></ProfileInput>
+        <ProfileInput userInfo = {userInfo} setUserInfo = {setUserInfo}></ProfileInput>
+        <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
+        <EducationInput></EducationInput>
       </div>
-      <CV fullName = {fullName} email = {email} tel = {tel} location={location}></CV>
+      <CV userInfo = {userInfo} userWork={userWork}></CV>
       </>
   );
 }
