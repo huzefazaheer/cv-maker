@@ -24,9 +24,9 @@ function CVInfo({userInfo}){
     return(
         <>
             <h2 className="username">{userInfo.name}</h2>
-            <div className="iconholder"><img src="../../src/assets/mailicon.svg" alt="" /><h3 className="useremail">{userInfo.email}</h3></div>
-            <div className="iconholder"><img src="../../src/assets/telicon.svg" alt="" /><h3 className="usertel">{userInfo.tel}</h3></div>
-            <div className="iconholder"><img src="../../src/assets/locicon.svg" alt="" /><h3 className="userlocation">{userInfo.location}</h3></div>
+            <div className="iconholder"><img src="/mailicon.svg" alt="" /><h3 className="useremail">{userInfo.email}</h3></div>
+            <div className="iconholder"><img src="/telicon.svg" alt="" /><h3 className="usertel">{userInfo.tel}</h3></div>
+            <div className="iconholder"><img src="/locicon.svg" alt="" /><h3 className="userlocation">{userInfo.location}</h3></div>
             </>
     )
 }

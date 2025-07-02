@@ -72,10 +72,10 @@ function App() {
       <>
       <div className="menu">
         <div className="controls">
-          <div className="control" onClick={() => {setIndex(0)}}><img src="../src/assets/infoicon.svg" alt="" /><p className='tiny'>Personal Info</p></div>
-          <div className="control" onClick={() => {setIndex(1)}}><img src="../src/assets/eduicon.svg" alt="" /><p className='tiny'>Education</p></div>
-          <div className="control" onClick={() => {setIndex(2)}}><img src="../src/assets/workicon.svg" alt="" /><p className='tiny'>Work</p></div>
-          <div className="control" onClick={() => {setIndex(3)}}><img src="../src/assets/settingsicon.svg" alt="" /><p className='tiny'>Prefrences</p></div>
+          <div className="control" onClick={() => {setIndex(0)}}><img src="/infoicon.svg" alt="" /><p className='tiny'>Personal Info</p></div>
+          <div className="control" onClick={() => {setIndex(1)}}><img src="/eduicon.svg" alt="" /><p className='tiny'>Education</p></div>
+          <div className="control" onClick={() => {setIndex(2)}}><img src="/workicon.svg" alt="" /><p className='tiny'>Work</p></div>
+          <div className="control" onClick={() => {setIndex(3)}}><img src="/settingsicon.svg" alt="" /><p className='tiny'>Prefrences</p></div>
         </div>
         {index == 0 ? info : index == 1 ? edu : index == 2 ? work : pref}
       </div>
