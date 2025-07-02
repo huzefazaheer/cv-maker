@@ -26,16 +26,18 @@ export function WorkInput({userWork, setUserWork}){
     );
 }
 
-export function EducationInput(){
+export function EducationInput({userEducation, setUserEducation}){
+
+    const currEdu = userEducation[0]
 
     return (
         <>
-        <div className="input"><label >School</label><input type="text" ></input></div>
-        <div className="input"><label >Degree</label><input type="text" ></input></div>
-        <div className="input"><label >Start Date</label><input type="date" ></input></div>
-        <div className="input"><label >End Date</label><input type="date" ></input></div>
-        <div className="input"><label >Location</label><input type="text" ></input></div>
-        <div className="input"><label >Level</label><input type="text" ></input></div>
+        <div className="input"><label >School</label><input type="text" value={currEdu.schoolName} onChange={(e) => setUserEducation([{...currEdu, schoolName: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >Degree</label><input type="text" value={currEdu.degree} onChange={(e) => setUserEducation([{...currEdu, degree: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >Start Date</label><input type="date" value={currEdu.startDate} onChange={(e) => setUserEducation([{...currEdu, startDate: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >End Date</label><input type="date" value={currEdu.endDate} onChange={(e) => setUserEducation([{...currEdu, endDate: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >Location</label><input type="text" value={currEdu.location} onChange={(e) => setUserEducation([{...currEdu, location: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >Level</label><input type="text" value={currEdu.edulevel} onChange={(e) => setUserEducation([{...currEdu, edulevel: e.target.value}, ...userEducation.splice(1)])}></input></div>
         </>
     );
 }

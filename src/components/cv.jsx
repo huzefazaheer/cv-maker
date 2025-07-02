@@ -1,10 +1,11 @@
-export default function CV({userInfo, userWork}){
+export default function CV({userInfo, userWork, userEducation}){
 
     return(
         <>
             <div className="cv">
             <CVInfo userInfo={userInfo}></CVInfo>
             <CVWork userWork={userWork}></CVWork>
+            <CVEdu userEducation={userEducation}></CVEdu>
             </div>
         </>
     );
@@ -32,6 +33,26 @@ function CVWork({userWork}){
             <h4>{userWork[0].startDate}</h4>
             <h4>{userWork[0].endDate}</h4>
             <p>{userWork[0].desc}</p>
+            </>
+        )
+
+    return(
+        <>
+        {workDetail}
+        </>
+    )
+}
+
+function CVEdu({userEducation}){
+    let workDetail = []
+        workDetail.push(
+            <>
+            <h2>{userEducation[0].schoolName}</h2>
+            <h3>{userEducation[0].degree}</h3>
+            <h3>{userEducation[0].edulevel}</h3>
+            <h4>{userEducation[0].startDate}</h4>
+            <h4>{userEducation[0].endDate}</h4>
+            <h3>{userEducation[0].location}</h3>
             </>
         )
 
