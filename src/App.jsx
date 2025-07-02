@@ -8,6 +8,9 @@ function App() {
 
   const [index, setIndex] = useState(0);
 
+  const [accentColor, setAccentColor] = useState("#365F75")
+  const [defaultFont, setDefaultFont] = useState("Arial")
+
   const [userInfo, setUserInfo] = useState({name:"John Doe", email:"mail@example.com", tel:"923101234567", location:"Islamabad, Pakistan"});
   const [userWork, setUserWork] = useState([{companyName:"Umbrella Inc.", title:"Full Stack Web Dev",location: "Islamabad, Pakistan", desc: "Supported senior researchers on accessibility standards for the open  web. Created and usability tested wireframes and prototypes. Produced  interactive documentation for quick onboarding of new researchers.", startDate: "2024-07-02", endDate: "2028-07-02"}]);
   const [userEducation, setUserEducation] = useState([{schoolName:"National University of Sciences and Technology", degree:"Bachelors in Electrical Engineering", edulevel:"Undergraduate", location:"Islamabad, Pakistan", startDate: "2024-07-02", endDate: "2028-07-02"}])
@@ -35,6 +38,24 @@ function App() {
     </>
   )
 
+  const pref = (
+    <>
+    <h2 className='inputheading'>Prefrences</h2>
+    <h3 className='inputsubheading'>Choose Accent Colour</h3>
+    <div className="col">
+    <div href="" id="cyan" className="coloursel" onClick={() => setAccentColor("#365F75")}></div>
+    <div href="" id="red" className="coloursel" onClick={() => setAccentColor("#813030")}></div>
+    <div href="" id="black" className="coloursel" onClick={() => setAccentColor("#1B1B1B")}></div>
+    <div href="" id="green" className="coloursel" onClick={() => setAccentColor("#067403")}></div>
+    <div href="" id="pink" className="coloursel" onClick={() => setAccentColor("#943f8a")}></div></div>
+    <h3 className='inputsubheading'>Choose Font</h3>
+    <div className="col">
+    <div href="" id="" className="fontsel" onClick={() => setDefaultFont("Times New Roman")}>Times New Roman</div>
+    <div href="" id="" className="fontsel" onClick={() => setDefaultFont("Inter")}>Inter</div>
+    <div href="" id="" className="fontsel" onClick={() => setDefaultFont("Arial")}>Arial</div></div>
+    </>
+  )
+
   return (
       <>
       <div className="menu">
@@ -44,9 +65,9 @@ function App() {
           <div className="control" onClick={() => {setIndex(2)}}><img src="../src/assets/workicon.svg" alt="" /><p className='tiny'>Work</p></div>
           <div className="control" onClick={() => {setIndex(3)}}><img src="../src/assets/settingsicon.svg" alt="" /><p className='tiny'>Prefrences</p></div>
         </div>
-        {index == 0 ? info : index == 1 ? edu : work}
+        {index == 0 ? info : index == 1 ? edu : info == 3 ? work : pref}
       </div>
-      <CV userInfo = {userInfo} userWork={userWork} userEducation={userEducation}></CV>
+      <CV accentColor = {accentColor} defaultFont = {defaultFont} userInfo = {userInfo} userWork={userWork} userEducation={userEducation}></CV>
       </>
   );
 }

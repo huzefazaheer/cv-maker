@@ -1,17 +1,17 @@
 import "./cv.css"
 
-export default function CV({userInfo, userWork, userEducation}){
+export default function CV({accentColor, defaultFont, userInfo, userWork, userEducation}){
 
     return(
         <>
-            <div className="cv">
-            <div className="cvinfo"><CVInfo userInfo={userInfo}></CVInfo></div>
+            <div className="cv" style={{fontFamily:defaultFont}}>
+            <div className="cvinfo" style={{backgroundColor:accentColor}}><CVInfo userInfo={userInfo}></CVInfo></div>
             <div className="cvedu">
-                <h2 className="cvheading">Education</h2>
+                <h2 className="cvheading" style={{color:accentColor}}>Education</h2>
                 <CVEdu userEducation={userEducation}></CVEdu>
             </div>
             <div className="cvwork">
-                <h2 className="cvheading">Professional Experience</h2>
+                <h2 className="cvheading" style={{color:accentColor}}>Professional Experience</h2>
                 <CVWork userWork={userWork}></CVWork>
             </div>
             </div>
