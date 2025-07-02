@@ -4,7 +4,9 @@
   margin-right: 6vw;
   display: flex;
   flex-direction: column;
+  min-width: 400px;
   max-width: 400px;
+  border-radius: 20px;
 }
 
 .input{
@@ -47,4 +49,22 @@ button:hover{
 
 button:active{
     background-color: #1f3a47;
+}
+
+.controls{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}   
+
+.tiny{
+    font-size: 10px;
+    text-align: center;
+    position:absolute;
+}
+
+.control:hover{
+    background-color: rgb(168, 166, 166);
 }
