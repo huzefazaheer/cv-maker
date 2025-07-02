@@ -10,34 +10,50 @@ export function ProfileInput({userInfo, setUserInfo}){
     );
 }
 
-export function WorkInput({userWork, setUserWork}){
+export function WorkInput({userWork, setUserWork, id}){
 
-    const currWork = userWork[0]
+    let currWork, workindex
+
+    for(let i =0; i<userWork.length; i++){
+        if(userWork[i].id == id){
+            currWork = userWork[i]
+            workindex = i
+            break
+        }
+    }
 
     return (
         <>
-        <div className="input"><label >Company Name</label><input type="text" value={currWork.companyName} onChange={(e) => setUserWork([{...currWork, companyName: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >Position Title</label><input type="email" value={currWork.title} onChange={(e) => setUserWork([{...currWork, title: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >Start Date</label><input type="date" value={currWork.startDate} onChange={(e) => setUserWork([{...currWork, startDate: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >End Date</label><input type="date" value={currWork.endDate} onChange={(e) => setUserWork([{...currWork, endDate: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >Location</label><input type="text" value={currWork.location} onChange={(e) => setUserWork([{...currWork, location: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >Description</label><textarea type="text" value={currWork.desc} onChange={(e) => setUserWork([{...currWork, desc: e.target.value}, ...userWork.splice(1)])}></textarea></div>
+        <div className="input"><label >Company Name</label><input type="text" value={currWork.companyName} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], companyName: e.target.value}, ...userWork.slice(workindex + 1)])}></input></div>
+        <div className="input"><label >Position Title</label><input type="email" value={currWork.title} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], title: e.target.value}, ...userWork.slice(workindex + 1)])}></input></div>
+        <div className="input"><label >Start Date</label><input type="date" value={currWork.startDate} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], startDate: e.target.value}, ...userWork.slice(workindex + 1)])}></input></div>
+        <div className="input"><label >End Date</label><input type="date" value={currWork.endDate} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], endDate: e.target.value}, ...userWork.slice(workindex + 1)])}></input></div>
+        <div className="input"><label >Location</label><input type="text" value={currWork.location} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], location: e.target.value}, ...userWork.slice(workindex + 1)])}></input></div>
+        <div className="input"><label >Description</label><textarea type="text" value={currWork.desc} onChange={(e) => setUserWork([...userWork.slice(0, workindex), {...userWork[workindex], desc: e.target.value}, ...userWork.slice(workindex + 1)])}></textarea></div>
         </>
     );
 }
 
-export function EducationInput({userEducation, setUserEducation}){
+export function EducationInput({userEducation, setUserEducation, id}){
 
-    const currEdu = userEducation[0]
+    let currEdu, eduindex
+
+    for(let i =0; i<userEducation.length; i++){
+        if(userEducation[i].id == id){
+            currEdu = userEducation[i]
+            eduindex = i
+            break
+        }
+    }
 
     return (
         <>
-        <div className="input"><label >School</label><input type="text" value={currEdu.schoolName} onChange={(e) => setUserEducation([{...currEdu, schoolName: e.target.value}, ...userEducation.splice(1)])}></input></div>
-        <div className="input"><label >Degree</label><input type="text" value={currEdu.degree} onChange={(e) => setUserEducation([{...currEdu, degree: e.target.value}, ...userEducation.splice(1)])}></input></div>
-        <div className="input"><label >Start Date</label><input type="date" value={currEdu.startDate} onChange={(e) => setUserEducation([{...currEdu, startDate: e.target.value}, ...userEducation.splice(1)])}></input></div>
-        <div className="input"><label >End Date</label><input type="date" value={currEdu.endDate} onChange={(e) => setUserEducation([{...currEdu, endDate: e.target.value}, ...userEducation.splice(1)])}></input></div>
-        <div className="input"><label >Location</label><input type="text" value={currEdu.location} onChange={(e) => setUserEducation([{...currEdu, location: e.target.value}, ...userEducation.splice(1)])}></input></div>
-        <div className="input"><label >Level</label><input type="text" value={currEdu.edulevel} onChange={(e) => setUserEducation([{...currEdu, edulevel: e.target.value}, ...userEducation.splice(1)])}></input></div>
+        <div className="input"><label >School</label><input type="text" value={currEdu.schoolName} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], schoolName: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
+        <div className="input"><label >Degree</label><input type="text" value={currEdu.degree} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], degree: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
+        <div className="input"><label >Start Date</label><input type="date" value={currEdu.startDate} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], startDate: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
+        <div className="input"><label >End Date</label><input type="date" value={currEdu.endDate} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], endDate: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
+        <div className="input"><label >Location</label><input type="text" value={currEdu.location} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], location: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
+        <div className="input"><label >Level</label><input type="text" value={currEdu.edulevel} onChange={(e) => setUserEducation([...userEducation.slice(0, eduindex), {...userEducation[eduindex], edulevel: e.target.value}, ...userEducation.slice(eduindex + 1)])}></input></div>
         </>
     );
 }

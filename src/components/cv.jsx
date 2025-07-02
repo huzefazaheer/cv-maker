@@ -32,21 +32,20 @@ function CVInfo({userInfo}){
 }
 
 function CVWork({userWork}){
-    let workDetail = []
-        workDetail.push(
-            <div className="cvworkdetail">
+     let workDetail = userWork.map(work => 
+            <div className="cvworkdetail" key={work.id}>
                 
             <div className="left">
-                <div className="date"><p>{userWork[0].startDate}</p>
-            <p>{userWork[0].endDate}</p></div>
-            <p className="medium">{userWork[0].location}</p>
+                <div className="date"><p>{work.startDate}</p>
+            <p>{work.endDate}</p></div>
+            <p className="medium">{work.location}</p>
             </div>
             <div className="right">
-            <p className="bold">{userWork[0].companyName}</p>
-            <p>{userWork[0].title}</p>
-            <p className="small">{userWork[0].desc}</p></div>
+            <p className="bold">{work.companyName}</p>
+            <p>{work    .title}</p>
+            <p className="small">{work.desc}</p></div>
             </div>
-        )
+        );
 
     return(
         <>
@@ -56,26 +55,24 @@ function CVWork({userWork}){
 }
 
 function CVEdu({userEducation}){
-    let workDetail = []
-        workDetail.push(
-            <div className="cvedudetail">
+    let eduDetail = userEducation.map(education => 
+        <div className="cvedudetail" key={education.id}>
             
             <div className="left">
-            <div className="date"><p>{userEducation[0].startDate}</p>
-            <p>{userEducation[0].endDate}</p></div>
-            <p className="bold">{userEducation[0].location}</p>
-            </div>
-
+            <div className="date"><p>{education.startDate}</p>
+            <p>{education.endDate}</p></div>
+            <p className="bold">{education.location}</p>
+            </div>  
             <div className="right">
-            <p className="bold">{userEducation[0].schoolName}</p>
-            <p>{userEducation[0].degree}</p>
-            <p className="small">{userEducation[0].edulevel}</p></div>
+            <p className="bold">{education.schoolName}</p>
+            <p>{education.degree}</p>
+            <p className="small">{education.edulevel}</p></div>
             </div>
-        )
-
+    );
+            
     return(
         <>
-        {workDetail}
+        {eduDetail}
         </>
     )
 }

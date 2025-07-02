@@ -12,8 +12,8 @@ function App() {
   const [defaultFont, setDefaultFont] = useState("Arial")
 
   const [userInfo, setUserInfo] = useState({name:"John Doe", email:"mail@example.com", tel:"923101234567", location:"Islamabad, Pakistan"});
-  const [userWork, setUserWork] = useState([{companyName:"Umbrella Inc.", title:"Full Stack Web Dev",location: "Islamabad, Pakistan", desc: "Supported senior researchers on accessibility standards for the open  web. Created and usability tested wireframes and prototypes. Produced  interactive documentation for quick onboarding of new researchers.", startDate: "2024-07-02", endDate: "2028-07-02"}]);
-  const [userEducation, setUserEducation] = useState([{schoolName:"National University of Sciences and Technology", degree:"Bachelors in Electrical Engineering", edulevel:"Undergraduate", location:"Islamabad, Pakistan", startDate: "2024-07-02", endDate: "2028-07-02"}])
+  const [userWork, setUserWork] = useState([{id:crypto.randomUUID(), companyName:"Umbrella Inc.", title:"Full Stack Web Dev",location: "Islamabad, Pakistan", desc: "Supported senior researchers on accessibility standards for the open  web. Created and usability tested wireframes and prototypes. Produced  interactive documentation for quick onboarding of new researchers.", startDate: "2024-07-02", endDate: "2028-07-02"}]);
+  const [userEducation, setUserEducation] = useState([{id:crypto.randomUUID(), schoolName:"National University of Sciences and Technology", degree:"Bachelors in Electrical Engineering", edulevel:"Undergraduate", location:"Islamabad, Pakistan", startDate: "2024-07-02", endDate: "2028-07-02"}])
 
   const info = (
     <>
@@ -22,19 +22,31 @@ function App() {
     </>
   )
 
+  const educations = userEducation.map(education =>
+    <EducationInput userEducation={userEducation} setUserEducation={setUserEducation} id={education.id}></EducationInput>
+  )
   const edu = (
     <>
     <h2 className='inputheading'>Education Details</h2>
-    <EducationInput userEducation={userEducation} setUserEducation={setUserEducation}></EducationInput>
-    <button>Add New</button>
+    {educations}
+    <button onClick={() => {
+      const newid = crypto.randomUUID()
+      const newdat = {id:newid, schoolName:"National University of Sciences and Technology", degree:"Bachelors in Electrical Engineering", edulevel:"Undergraduate", location:"Islamabad, Pakistan", startDate: "2024-07-02", endDate: "2028-07-02"}
+      setUserEducation([...userEducation, newdat])}}>Add New</button>
     </>
   )
 
+  const works = userWork.map(work =>
+    <WorkInput userWork = {userWork} setUserWork = {setUserWork} id={work.id}></WorkInput>
+  )
   const work = (
     <>
     <h2 className='inputheading'>Work Details</h2>
-    <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
-    <button>Add New</button>
+    {works}
+    <button onClick={() => {
+      const newid = crypto.randomUUID()
+      const newdat = {id:newid, companyName:"Umbrella Inc.", title:"Full Stack Web Dev",location: "Islamabad, Pakistan", desc: "Supported senior researchers on accessibility standards for the open  web. Created and usability tested wireframes and prototypes. Produced  interactive documentation for quick onboarding of new researchers.", startDate: "2024-07-02", endDate: "2028-07-02"}
+      setUserWork([...userWork  , newdat])}}>Add New</button>
     </>
   )
 
