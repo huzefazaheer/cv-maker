@@ -4,7 +4,7 @@ export function ProfileInput({userInfo, setUserInfo}){
         <>
         <div className="input"><label >Full Name</label><input type="text" value={userInfo.name} onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}></input></div>
         <div className="input"><label >Email</label><input type="email" value={userInfo.email} onChange={(e) => setUserInfo({...userInfo, email: e.target.value})}></input></div>
-        <div className="input"><label >Phone Number</label><input type="number" value={userInfo.tel} onChange={(e) => setUserInfo({...userInfo, tel: e.target.value})}></input></div>
+        <div className="input"><label >Phone Number</label><input type="text" value={userInfo.tel} onChange={(e) => setUserInfo({...userInfo, tel: e.target.value})}></input></div>
         <div className="input"><label >Address</label><input type="text" value={userInfo.location} onChange={(e) => setUserInfo({...userInfo, location: e.target.value})}   ></input></div>
         </>
     );

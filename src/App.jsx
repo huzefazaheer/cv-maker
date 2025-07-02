@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import "./components/menu.css"
 import CV from './components/cv'
 import { EducationInput, ProfileInput, WorkInput } from './components/input';
 
@@ -12,9 +13,12 @@ function App() {
   return (
       <>
       <div className="menu">
+        <h2 className='inputheading'>Personal Details</h2>
         <ProfileInput userInfo = {userInfo} setUserInfo = {setUserInfo}></ProfileInput>
-        <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
+        <h2 className='inputheading'>Education</h2>
         <EducationInput userEducation={userEducation} setUserEducation={setUserEducation}></EducationInput>
+        <h2 className='inputheading'>Work</h2>
+        <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
       </div>
       <CV userInfo = {userInfo} userWork={userWork} userEducation={userEducation}></CV>
       </>
