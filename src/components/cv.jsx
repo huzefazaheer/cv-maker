@@ -24,14 +24,16 @@ function CVInfo({userInfo}){
 
 function CVWork({userWork}){
     let workDetail = []
-    for(let i = 0; i<userWork.length; i++){
         workDetail.push(
             <>
-            <h2>{userWork[i].name}</h2>
-            <h3>{userWork[i].title}</h3>
+            <h2>{userWork[0].companyName}</h2>
+            <h3>{userWork[0].title}</h3>
+            <h3>{userWork[0].location}</h3>
+            <h4>{userWork[0].startDate}</h4>
+            <h4>{userWork[0].endDate}</h4>
+            <p>{userWork[0].desc}</p>
             </>
         )
-    }
 
     return(
         <>

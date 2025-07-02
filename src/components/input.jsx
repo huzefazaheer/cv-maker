@@ -10,16 +10,18 @@ export function ProfileInput({userInfo, setUserInfo}){
     );
 }
 
-export function WorkInput(){
+export function WorkInput({userWork, setUserWork}){
+
+    const currWork = userWork[0]
 
     return (
         <>
-        <div className="input"><label >Company Name</label><input type="text" ></input></div>
-        <div className="input"><label >Position Title</label><input type="email" ></input></div>
-        <div className="input"><label >Start Date</label><input type="date" ></input></div>
-        <div className="input"><label >End Date</label><input type="date" ></input></div>
-        <div className="input"><label >Location</label><input type="text" ></input></div>
-        <div className="input"><label >Description</label><input type="text" ></input></div>
+        <div className="input"><label >Company Name</label><input type="text" value={currWork.companyName} onChange={(e) => setUserWork([{...currWork, companyName: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >Position Title</label><input type="email" value={currWork.title} onChange={(e) => setUserWork([{...currWork, title: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >Start Date</label><input type="date" value={currWork.startDate} onChange={(e) => setUserWork([{...currWork, startDate: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >End Date</label><input type="date" value={currWork.endDate} onChange={(e) => setUserWork([{...currWork, endDate: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >Location</label><input type="text" value={currWork.location} onChange={(e) => setUserWork([{...currWork, location: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >Description</label><input type="text" value={currWork.desc} onChange={(e) => setUserWork([{...currWork, desc: e.target.value}, ...userWork.splice(1)])}></input></div>
         </>
     );
 }
