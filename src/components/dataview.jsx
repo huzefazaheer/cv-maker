@@ -15,7 +15,6 @@ export function ProfileView(){
 
 export function WorkView(){
 
-
     return (
         <>
             <h3>My Company</h3>

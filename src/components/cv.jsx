@@ -1,13 +1,12 @@
-export default function CV(){
-
+export default function CV({fullName, email, tel, location}){
 
     return(
         <>
             <div className="cv">
-            <h2>John Doe</h2>
-            <h3>email@example.com</h3>
-            <h3>+923111889644</h3>
-            <h3>Islamabad, PK</h3>
+            <h2>{fullName}</h2>
+            <h3>{email}</h3>
+            <h3>{tel}</h3>
+            <h3>{location}</h3>
             </div>
         </>
     );

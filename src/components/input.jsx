@@ -1,11 +1,11 @@
-export function ProfileInput(){
 
+export function ProfileInput({fullName, setFullName, email, setEmail, tel, setTel, location, setLocation}){
     return (
         <>
-        <div className="input"><label >Full Name</label><input type="text" ></input></div>
-        <div className="input"><label >Email</label><input type="email" ></input></div>
-        <div className="input"><label >Phone Number</label><input type="number" ></input></div>
-        <div className="input"><label >Address</label><input type="text" ></input></div>
+        <div className="input"><label >Full Name</label><input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}></input></div>
+        <div className="input"><label >Email</label><input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
+        <div className="input"><label >Phone Number</label><input type="number" value={tel} onChange={(e) => setTel(e.target.value)}></input></div>
+        <div className="input"><label >Address</label><input type="text" value={location} onChange={(e) => setLocation(e.target.value)}></input></div>
         </>
     );
 }
