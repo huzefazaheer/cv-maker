@@ -156,3 +156,7 @@ button:active{
         margin-right: 0;
     }
 }
+
+.workinput, .eduinput{
+    padding-bottom: 60px;
+}
