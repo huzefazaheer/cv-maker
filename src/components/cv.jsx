@@ -39,7 +39,7 @@ function CVWork({userWork}){
             <div className="left">
                 <div className="date"><p>{userWork[0].startDate}</p>
             <p>{userWork[0].endDate}</p></div>
-            <p>{userWork[0].location}</p>
+            <p className="medium">{userWork[0].location}</p>
             </div>
             <div className="right">
             <p className="bold">{userWork[0].companyName}</p>
@@ -63,7 +63,7 @@ function CVEdu({userEducation}){
             <div className="left">
             <div className="date"><p>{userEducation[0].startDate}</p>
             <p>{userEducation[0].endDate}</p></div>
-            <p>{userEducation[0].location}</p>
+            <p className="bold">{userEducation[0].location}</p>
             </div>
 
             <div className="right">

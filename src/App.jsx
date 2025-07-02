@@ -65,7 +65,7 @@ function App() {
           <div className="control" onClick={() => {setIndex(2)}}><img src="../src/assets/workicon.svg" alt="" /><p className='tiny'>Work</p></div>
           <div className="control" onClick={() => {setIndex(3)}}><img src="../src/assets/settingsicon.svg" alt="" /><p className='tiny'>Prefrences</p></div>
         </div>
-        {index == 0 ? info : index == 1 ? edu : info == 3 ? work : pref}
+        {index == 0 ? info : index == 1 ? edu : index == 2 ? work : pref}
       </div>
       <CV accentColor = {accentColor} defaultFont = {defaultFont} userInfo = {userInfo} userWork={userWork} userEducation={userEducation}></CV>
       </>

@@ -21,12 +21,25 @@ input, textarea{
     background-color: #F6F6F6;
     border: black solid 1px;
     color: black;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300 !important;
 }
 
 textarea{
     width: 300px;
     min-height: 10vh;
     resize: none;
+    font-size: 14px !important;
+}
+
+input:focus, textarea:focus{
+    outline: #284858 1.5px solid;
+}
+
+label{
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 400;
 }
 
 .inputheading{
