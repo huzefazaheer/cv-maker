@@ -21,7 +21,7 @@ function App() {
 
   const edu = (
     <>
-    <h2 className='inputheading'>Education</h2>
+    <h2 className='inputheading'>Education Details</h2>
     <EducationInput userEducation={userEducation} setUserEducation={setUserEducation}></EducationInput>
     <button>Add New</button>
     </>
@@ -29,7 +29,7 @@ function App() {
 
   const work = (
     <>
-    <h2 className='inputheading'>Work</h2>
+    <h2 className='inputheading'>Work Details</h2>
     <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
     <button>Add New</button>
     </>
