@@ -69,3 +69,24 @@ p{
 .medium{
     font-weight: 500;
 }
+
+@media only screen and (max-width: 600px) {
+  .cv {
+    width: 95vw !important;
+    margin-top: 10vh;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    padding-bottom: 10vh;
+  }
+
+  .cvheading{
+    margin: 40px 20px;
+  }
+
+  .cvedudetail, .cvworkdetail{
+    flex-direction: column;
+    gap: 30px;
+    margin: 5px 20px;
+    padding: 0px 32px;
+}
+}
