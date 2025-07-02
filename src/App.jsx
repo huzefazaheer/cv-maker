@@ -17,8 +17,10 @@ function App() {
         <ProfileInput userInfo = {userInfo} setUserInfo = {setUserInfo}></ProfileInput>
         <h2 className='inputheading'>Education</h2>
         <EducationInput userEducation={userEducation} setUserEducation={setUserEducation}></EducationInput>
+        <button>Add New</button>
         <h2 className='inputheading'>Work</h2>
         <WorkInput userWork = {userWork} setUserWork = {setUserWork}></WorkInput>
+        <button>Add New</button>
       </div>
       <CV userInfo = {userInfo} userWork={userWork} userEducation={userEducation}></CV>
       </>

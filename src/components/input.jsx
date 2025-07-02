@@ -21,7 +21,7 @@ export function WorkInput({userWork, setUserWork}){
         <div className="input"><label >Start Date</label><input type="date" value={currWork.startDate} onChange={(e) => setUserWork([{...currWork, startDate: e.target.value}, ...userWork.splice(1)])}></input></div>
         <div className="input"><label >End Date</label><input type="date" value={currWork.endDate} onChange={(e) => setUserWork([{...currWork, endDate: e.target.value}, ...userWork.splice(1)])}></input></div>
         <div className="input"><label >Location</label><input type="text" value={currWork.location} onChange={(e) => setUserWork([{...currWork, location: e.target.value}, ...userWork.splice(1)])}></input></div>
-        <div className="input"><label >Description</label><input type="text" value={currWork.desc} onChange={(e) => setUserWork([{...currWork, desc: e.target.value}, ...userWork.splice(1)])}></input></div>
+        <div className="input"><label >Description</label><textarea type="text" value={currWork.desc} onChange={(e) => setUserWork([{...currWork, desc: e.target.value}, ...userWork.splice(1)])}></textarea></div>
         </>
     );
 }
